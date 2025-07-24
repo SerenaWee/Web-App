@@ -2,3 +2,12 @@ img {
     height:20%;
     width:20%;
 }
+
+.nav .nav-item .nav-link.active {
+    background-color: lightpink;
+    color: darkblue;
+}
+
+.index {
+    
+}
