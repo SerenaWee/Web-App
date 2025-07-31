@@ -1,8 +1,9 @@
-img {
-    display: block;
-    min-width: 40%;
-    max-width: 80%;
-    margin: auto
+body {
+  background-image: url("Aviation.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  /*   height: 100vh; */
+  width: 100vw;
 }
 
 .nav .nav-item .nav-link.active {
@@ -10,8 +11,5 @@ img {
     color: darkblue;
 }
 
-body{
-    background-color: rgb(250, 239, 241);
-}
 
 
