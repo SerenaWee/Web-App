@@ -1,6 +1,8 @@
 img {
-    height:80%;
-    width:90%;
+    display: block;
+    min-width: 40%;
+    max-width: 80%;
+    margin: auto
 }
 
 .nav .nav-item .nav-link.active {
