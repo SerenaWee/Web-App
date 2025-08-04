@@ -19,9 +19,10 @@ function fetchAirtableData() {
 
     data.records.forEach(record => {
       const fields = record.fields;
-      const name = fields.Name || 'No Name';
-      const departure = fields.Departure || 'No Departure';
-      const flightNumber = fields.Flight || 'No Flight Number';
+      const name = fields.Name || 'Name';
+      const departure = fields.Departure || 'Departure';
+      const flightNumber = fields.Flight || 'Flight Number';
+      const flightTime = fields.Time || 'Flight Number';
 
       // Create flip card element
       
@@ -32,12 +33,13 @@ function fetchAirtableData() {
         <div class="flip-card-inner">
           <!-- Front -->
           <div class="flip-card-front">
-            Flight: ${flightNumber}
+            Departure Airport: ${departure}
           </div>
           <!-- Back -->
           <div class="flip-card-back">
             <strong>${name}</strong><br/>
-            Departure: ${departure}
+            Flight Number: ${flightNumber}<br/>
+            Arrival Time: ${flightTime}
           </div>
         </div>
       `;
