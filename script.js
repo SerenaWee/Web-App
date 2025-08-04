@@ -1,59 +1,58 @@
 "use strict";
-// function for our list view
-async function getAllRecords() {
-  let getResultElement = document.getElementById("FlightData");
+const airtableApiKey = 'YOUR_API_KEY';
+const baseId = 'YOUR_BASE_ID';
+const tableName = 'SFO Flights';
 
-  const options = {
-    method: "GET",
+const url = `https://api.airtable.com/v0/app0agWsi4kCVfxTA/SFO%20Flights`;
+
+function fetchAirtableData() {
+  fetch(url, {
     headers: {
-      Authorization: `Bearer patPVR6BguRc8cMPT.2825622f81a361063d4fec9d118c49bea33ed0a4195d3aac587fcaba4e0bfc92`,
-    },
-  };
+           Authorization: `Bearer patPVR6BguRc8cMPT.2825622f81a361063d4fec9d118c49bea33ed0a4195d3aac587fcaba4e0bfc92`
+    }
 
-  await fetch(
-    `https://api.airtable.com/v0/app0agWsi4kCVfxTA/SFO%20Flights`,
-    options
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data); // response is an object w/ .records array
+  })
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('airtable-data');
+    container.innerHTML = ''; // Clear previous content
 
-      getResultElement.innerHTML = ""; // clear brews
+    data.records.forEach(record => {
+      const fields = record.fields;
+      const name = fields.Name || 'No Name';
+      const departure = fields.Departure || 'No Departure';
+      const flightNumber = fields.Flight || 'No Flight Number';
 
-      let newHtml = "";
+      // Create flip card element
+      
+      const flipCard = document.createElement('div');
+      flipCard.className = 'flip-card';
 
-      for (let i = 0; i < data.records.length; i++) {
-        let name = data.records[i].fields["Name"]; 
-        let flight = data.records[i].fields["Flight"]; 
-        let departure = data.records[i].fields["Departure"];
-
-        newHtml += `
-        <div class="col-md-4 alley 
-        `;
-      }
-
-      getResultElement.innerHTML = newHtml;
+      flipCard.innerHTML = `
+        <div class="flip-card-inner">
+          <!-- Front -->
+          <div class="flip-card-front">
+            Flight: ${flightNumber}
+          </div>
+          <!-- Back -->
+          <div class="flip-card-back">
+            <strong>${name}</strong><br/>
+            Departure: ${departure}
+          </div>
+        </div>
+      `;
+flipCard.addEventListener('click', () => {
+  flipCard.querySelector('.flip-card-inner').classList.toggle('flipped');
+});
+      // Append to container
+      container.appendChild(flipCard);
     });
-}
-// // look up window.location.search and split, so this would take
-// // https://dmspr2021-airtable-app.glitch.me/index.html?id=receHhOzntTGZ44I5
-// // and look at the ?id=receHhOzntTGZ44I5 part, then split that into an array
-// // ["?id=", "receHhOzntTGZ44I5"] and then we only choose the second one
-// let idParams = window.location.search.split("?id=");
-// if (idParams.length >= 2) {
-//   // call function to hide search bar
-//   myFunction();
-//   // has at least ["?id=", "OUR ID"]
-//   // call function for the dropdown menu
-//   //dropdown();
-//   //getOneRecord(idParams[1]); // create detail view HTML w/ our id
-// //} else {
-//   // Call listener function to hide search bar for mobile devices
-//  // myNeighborhood(x);
-//   // call function for the dropdown menu
-//   //dropdown();
-//   getAllRecords(); // no id given, fetch summaries
-// }
-getAllRecords();
+  })
 
- 
+  .catch(error => {
+    console.error('Error fetching Airtable data:', error);
+  });
+}
+
+// Call the function on page load
+window.addEventListener('DOMContentLoaded', fetchAirtableData);
