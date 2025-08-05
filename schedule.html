@@ -2,82 +2,80 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./schedule.css">
-   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./schedule.css">
+
 </head>
 
 <body>
-    <!--container with id 'brews' where JavaScript pushes the Airtable data -->
-    <div class="">
-      <div class="" id="FlightData">
-      </div>
+  <!--container with id 'brews' where JavaScript pushes the Airtable data -->
+  <div class="">
+    <div class="" id="FlightData">
     </div>
-    
-
-    <div class="container-fluid"></div>
-    <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="photo.html">Photos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="schedule.html">Schedule</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="community.html">Community</a>
-        </li>
-    </ul>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
- <script src="./script.js"></script>
+  </div>
 
 
-<div id="airtable-data"></div>
+  <div class="container-fluid"></div>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="photo.html">Photos</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="schedule.html">Schedule</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="community.html">Community</a>
+    </li>
+  </ul>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
 
-<script>
-  const airtableApiKey = 'YOUR_API_KEY'; // Replace with your Airtable API key
-  const baseId = 'YOUR_BASE_ID'; // Replace with your Airtable Base ID
-  const tableName = 'YOUR_TABLE_NAME'; // Replace with your table name
 
-  const url = `https://api.airtable.com/v0/${baseId}/${tableName}`;
+  <div id="airtable-data"></div>
 
-  fetch(url, {
-    headers: {
-      Authorization: `Bearer ${airtableApiKey}`
-    }
-  })
-  .then(response => response.json())
-  .then(data => {
-    // data.records is an array of records
-    const container = document.getElementById('airtable-data');
+  <script>
 
-    data.records.forEach(record => {
-      const fields = record.fields;
-      // For example, if your fields are 'Name' and 'Departure'
-      const name = fields.Name || 'No Name';
-      const departure = fields.Departure || 'No Departure';
+    const url = `https://api.airtable.com/v0/${baseId}/${tableName}`;
 
-      // Create HTML element to display data
-      const div = document.createElement('div');
-      div.style.border = '1px solid #ccc';
-      div.style.padding = '10px';
-      div.style.margin = '5px 0';
+    fetch(url, {
+      headers: {
+        Authorization: `Bearer ${airtableApiKey}`
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        // data.records is an array of records
+        const container = document.getElementById('airtable-data');
 
-      div.innerHTML = `<strong>${name}</strong><br/>Departure: ${departure}`;
-      container.appendChild(div);
-    });
-  })
-  .catch(error => console.error('Error fetching Airtable data:', error));
-</script>
+        data.records.forEach(record => {
+          const fields = record.fields;
+          // For example, if your fields are 'Name' and 'Departure'
+          const name = fields.Name || 'No Name';
+          const departure = fields.Departure || 'No Departure';
+
+          // Create HTML element to display data
+          const div = document.createElement('div');
+          div.style.border = '1px solid #ccc';
+          div.style.padding = '10px';
+          div.style.margin = '5px 0';
+
+          div.innerHTML = `<strong>${name}</strong><br/>Departure: ${departure}`;
+          container.appendChild(div);
+        });
+      })
+      .catch(error => console.error('Error fetching Airtable data:', error));
+  </script>
 
 </body>
+
 </html>
 </body>
