@@ -1,6 +1,7 @@
 .nav .nav-item .nav-link.active {
     background-color: lightpink;
     color: darkblue;
+    
 }
 #airtable-data {
   display: flex;

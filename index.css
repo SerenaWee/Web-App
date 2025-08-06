@@ -1,15 +1,66 @@
-body {
+/* body {
+  background-image: url("Aviation.jpg");
+  background-repeat: no-repeat;
+  background-size: 100em;
+  max-height: 100vh; 
+  max-width: 100vw; 
+} */
+
+/* head {
+  background-image: url("Aviation.jpg");
+  /*background-size: 100em;
+  background-repeat: no-repeat;
+  max-height: 100vh; 
+  max-width: 100vw;
+}  */
+/* body {
+  border: 2px solid black;
+  padding: 25px;
+  background: url(Aviation.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  } */
+/* body { */
+  /* The image used */
+  /* background-image: url("Aviation.jpg"); */
+
+  /* Full height
+  height: 100%;  */
+
+  /* Center and scale the image nicely
+  background-position-y: center;
+  /* background-repeat: no-repeat;
+  background-size: cover; 
+} */
+/* #example1 {
+            border: 2px solid rgb(255, 255, 255);
+            padding: 25px;
+            background: url(Aviation.jpg);
+            background-repeat: no-repeat;
+            background-size: auto;
+        } */
+.nav .nav-item .nav-link.active {
+    background-color: lightpink;
+    color: darkblue;
+}
+
+body { 
+  /* background:url("/Aviation.jpg");
+  background-image: url("images/beer\ on\ beach\ \(1\).jpeg"); */
   background-image: url("Aviation.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   /*   height: 100vh; */
   width: 100vw;
+  /* background-size: 80% 700%;
+  background-repeat: no-repeat; */
+}
+/* sets the container and columns to take up the entire height of the screen */
+.enter .col {
+  height: 80vh;
 }
 
-.nav .nav-item .nav-link.active {
-    background-color: lightpink;
-    color: darkblue;
-}
+
 
 
 

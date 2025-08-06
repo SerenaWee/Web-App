@@ -31,7 +31,7 @@ function fetchAirtableData() {
 
       flipCard.innerHTML = `
         <div class="flip-card-inner">
-          <!-- Front -->
+          <!--Front-->
           <div class="flip-card-front">
             Departure Airport: ${departure}
           </div>
