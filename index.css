@@ -59,7 +59,12 @@ body {
 .enter .col {
   height: 80vh;
 }
-
+h1 { 
+  color:blueviolet;
+  /* font-weight: 400; */
+  font-style: bold;
+  font-size: 4rem;
+}
 
 
 
