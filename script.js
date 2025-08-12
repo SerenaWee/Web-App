@@ -25,40 +25,41 @@ async function getAllRecords() {
       let newHtml = "";
     
       for (let i = 0; i < data.records.length; i++) {
+        let record = data.records[i];
         let make = data.records[i].fields["Photo"];
         let name = data.records[i].fields["Name"]; //here we are using the Field ID to fecth the name property
         let flight = data.records[i].fields["Flight"];
         let departure = data.records[i].fields["Departure"];
         let arrival = data.records[i].fields["Arrival"]; 
         let time = data.records[i].fields["Time"];
+        let days = data.records[i].fields["Days"];
+        let type = data.records[i].fields["Type"];
         
+// let anchorId = name.replace(/\s+/g, "-").toLowerCase();
 
+        // Add to dropdown
+       
         newHtml += `
-        <div class="row">
-        <div class="container-fluid"></div>
-        <div class="col-1">
-    </div>
-    <div class="col-3">
-      
-    
-        <div class="card">
-
-          <div class="card-body">
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card h-100">
+            
           ${
               make
                 ? `<img class="card-img-top rounded" alt="${name}" src="${make[0].url}">`
                 : ``
             }
+            <div class="card-body d-flex flex-column">
             <h5 class="card-title">${name}</h5>
+            <p> Flight Number: ${flight} </p>
+            <p>Departure Airport: ${departure} </p>
+            <h7>Arrival Airport: ${arrival}</h7>
+            <p> Arrival Time: ${time} </p>
+            <p> Flight Days: ${days} </p>
+            <p> Aircraft type: ${type} </p>
+             <div class="mt-auto d-flex justify-content-between">
             
-            
-            <p> Flight Number: ${flight} 🕰️</p>
-            <p>Star Reviews: ${departure} ⭐️</p>
-            <h7> ${arrival}</h7>
-            <p> Favorite Meal: ${time} 😁</p>
-            
-            
-           <a class="btn btn-primary w-auto col-3" href="./schedule.html"> Back to Alleys List </a>
+           <a class="btn btn-primary w-auto col-3" href="./schedule.html?id=${record.id}""> Back to Alleys List </a>
+          </div>
           </div>
         </div>
         </div>
@@ -72,13 +73,76 @@ async function getAllRecords() {
 }
 
 async function getOneRecord (id) {
+  let getResultElement = document.getElementById("Flights")
+ const options = {
+    method: "GET",
+    headers: {
+      Authorization:
+        "Bearer patPVR6BguRc8cMPT.2825622f81a361063d4fec9d118c49bea33ed0a4195d3aac587fcaba4e0bfc92",
+    },
+  };
 
+  const response = await fetch(
+    `https://api.airtable.com/v0/app0agWsi4kCVfxTA/SFO%20Flights/${id}`,
+    options
+  );
+  const data = await response.json();
+  const fields = data.fields;
+let record = data.records
+        let make = data.records.fields["Photo"];
+        let name = data.records.fields["Name"]; //here we are using the Field ID to fecth the name property
+        let flight = data.records.fields["Flight"];
+        let departure = data.records.fields["Departure"];
+        let arrival = data.records.fields["Arrival"]; 
+        let time = data.records.fields["Time"];
+        let days = data.records.fields["Days"];
+        let type = data.records.fields["Type"];
+  getResultElement.innerHTML = `
+    <div class="card detail-card">
+      <div class="card-body">
+        <h5 class="card-title">${fields["Name"]}</h5>
+        ${
+              make
+                ? `<img class="card-img-top rounded" alt="${name}" src="${make[0].url}">`
+                : ``
+            }
+        <h5 class="card-title">${name}</h5>
+            <p> Flight Number: ${flight} </p>
+            <p>Departure Airport: ${departure} </p>
+            <h7>Arrival Airport: ${arrival}</h7>
+            <p> Arrival Time: ${time} </p>
+            <p> Flight Days: ${days} </p>
+            <p> Aircraft type: ${type} </p>
+        ${
+          fields["Website"]
+            ? `<a href="${fields["Website"]}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mt-3 me-2">Visit Website</a>`
+            : ""
+        }
+        <a href="schedule.html" class="btn btn-secondary mt-3">Back to List</a>
+      </div>
+    </div>
+  `;
 }
 
- getAllRecords(); // no id given, fetch summaries
+
+//  getAllRecords(); // no id given, fetch summaries
 
 let idParams = window.location.search.split("?id=");
-if (idParams.length >= 2) {}
+if (idParams.length >= 2) {getOneRecord(idParams[1]);
+} else {
+  getAllRecords();
+}
+
+
+
+
+
+
+
+
+
+
+
 // "use strict";
 
 // // function for our list view
