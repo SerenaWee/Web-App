@@ -9,6 +9,9 @@
   gap: 10px; /* Space between items, optional */
 }
 
+body {
+  background-color: Seashell;
+}
 /* Flip card container
 .flip-card {
   background-color: transparent;
