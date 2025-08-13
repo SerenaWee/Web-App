@@ -1,57 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./photo.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plane Spotter</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./photo.css" />
     <script src="./script.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container-fluid"></div>
     <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="photo.html">Photo</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="schedule.html">Schedule</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="https://simpleflying.com/category/aviation-news/" target="_blanks">Community</a>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="photo.html"
+          >Photo</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="schedule.html">Schedule</a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="https://simpleflying.com/category/aviation-news/"
+          target="_blanks"
+          >Community</a
+        >
+      </li>
     </ul>
 
     <div class="container-fluid text-center mb-5">
-        <div class="row dist align-iteam-start">
-            <div class="col-12">
-                <h1 class="text-dark"><u>Photos</u></h1>
-            </div>
+      <div class="row dist align-iteam-start">
+        <div class="col-12">
+          <h1 class="text-dark"><u>Photos</u></h1>
         </div>
+      </div>
     </div>
 
-        <div class="row">
-          <div class="col">
-            <div class="card">
-              <img src="Boeing-707.jpeg" class="card-img-top" alt="Boeing 707" />
-              <div class="card-body">
-                <h4 class="card-title">Aviation Geek</h4>
+    <div class="flip-card-container">
+      <!-- Card 1 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Boeing-707.jpeg" alt="Boeing 707" />
+            <h4>Boeing 707</h4>
+          </div>
+          <div class="flip-card-back">
+            <!-- <h4>Boeing 707</h4> -->
+            <p>
+              The Boeing 707 was the first successful commercial jetliner and
+              marked the beginning of the Jet Age in the 1950s. It was developed
+              from Boeing's 367-80 prototype and made its first flight in 1957.
+              The 707 entered commercial service with Pan Am in 1958,
+              drastically reducing flight times and making international air
+              travel more accessible. It featured a sleek design, swept wings,
+              and four jet engines, carrying up to 189 passengers at high
+              speeds. Several variants were produced, including longer-range and
+              cargo versions. The aircraft also served in military roles, such
+              as the KC-135 tanker and E-3 AWACS. Over 1,000 Boeing 707s were
+              built before production ended in 1979. Its success cemented
+              Boeing's dominance in commercial aviation and influenced
+              generations of aircraft to come.
+            </p>
+          </div>
+        </div>
+      </div>
 
-                <p class="card-text">
-                  
-                </p>
+      <!-- Card 2 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Boeing 717.jpg" alt="Boeing 717" />
+            <h4>Boeing 717</h4>
+          </div>
+          <div class="flip-card-back">
+            <p>
+              The Boeing 717 is a twin-engine, short-haul commercial jet
+              originally designed by McDonnell Douglas as the MD-95. After
+              Boeing merged with McDonnell Douglas in 1997, the aircraft was
+              renamed the Boeing 717. It made its first flight in 1998 and
+              entered service in 1999 with AirTran Airways. The 717 was built to
+              serve regional routes, typically carrying between 100 and 117
+              passengers. It featured modern avionics, efficient engines, and
+              was known for its reliability and low operating costs. Despite its
+              performance, the aircraft struggled in a competitive market with
+              rising demand for larger regional jets. Production ended in 2006
+              after only 156 aircraft were built. Today, the 717 remains in
+              service with a few airlines, most notably Delta Air Lines and
+              Hawaiian Airlines.
+            </p>
+          </div>
+        </div>
+      </div>
 
-                <!-- <a href="https://www.flightradar24.com/" target="_blank" class="btn btn-primary">Flight Radar 24</a>
-                <a href="https://www.liveatc.net/" target="_blank" class="btn btn-primary">Live ATC radio</a> -->
-              </div>
+      <!-- Card 3 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Boeing-727.jpg" alt="Boeing 727" />
+            <h4>Boeing 727</h4>
+          </div>
+          <div class="flip-card-back">
+            <p>
+              The Boeing 727 is a three-engine, narrow-body jet airliner
+              designed for short to medium-haul routes. It first flew in 1963
+              and entered commercial service in 1964 with Eastern Air Lines. The
+              727 was built to operate from shorter runways and smaller
+              airports, making it ideal for domestic flights. Its unique T-tail
+              and rear-mounted engines gave it a distinctive look and quieter
+              cabin. The aircraft could carry around 130 to 180 passengers,
+              depending on the model. It became one of the most popular jets of
+              its time, with over 1,800 built. The 727 was widely used by
+              airlines around the world throughout the 1960s, 70s, and 80s.
+              Though mostly retired from passenger service, some 727s still fly
+              today in cargo and private roles.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Boeing 737.jpg" alt="Boeing 737" />
+            <h4>Boeing 737</h4>
+          </div>
+          <div class="flip-card-back">
+            <p>
+              The Boeing 737 is a twin-engine, narrow-body jet introduced in
+              1968 as a short-haul aircraft. It quickly became popular due to
+              its low operating costs and ability to operate from smaller
+              airports. Over the decades, it has evolved through multiple
+              generations, including the Classic, Next Generation (NG), and the
+              737 MAX. It typically seats between 85 and 215 passengers
+              depending on the variant. The 737 is the best-selling commercial
+              jet in history, with more than 10,000 built. Its reliability,
+              efficiency, and global support network have made it a favorite
+              among airlines worldwide. Despite temporary grounding of the 737
+              MAX, the aircraft continues to dominate the short- to medium-haul
+              market. It remains a key part of Boeing’s commercial fleet.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Boeing-747.jpeg" alt="Boeing 747" />
+            <h4>Boeing 747</h4>
+          </div>
+          <div class="flip-card-back">
+            <p>
+              The Boeing 747, nicknamed the “Jumbo Jet,” was the world’s first
+              wide-body airliner and entered service in 1970. It was designed to
+              carry large numbers of passengers on long-haul routes and featured
+              an iconic humpbacked upper deck. With seating for over 400
+              passengers, it revolutionized global travel by making
+              international flights more accessible. The 747 was initially
+              intended to serve as both a passenger and cargo aircraft. It
+              became a symbol of luxury and power in aviation for decades.
+              Boeing produced multiple variants, including the 747-400 and
+              747-8. More than 1,500 were built before passenger production
+              ended in 2023. Although largely retired from passenger service,
+              the 747 continues to serve as a freighter and in specialized
+              roles.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Boeing 757.jpg" alt="Boeing 757" />
+            <h4>Boeing 757</h4>
+          </div>
+          <div class="flip-card-back">
+            <p>
+              The Boeing 757 is a narrow-body, mid-size jet introduced in 1983
+              for medium- to long-range routes. It was designed to replace the
+              Boeing 727 and featured improved fuel efficiency and performance.
+              The aircraft is known for its powerful engines and ability to
+              operate from short runways or at high altitudes. It typically
+              seats 200 to 243 passengers and has strong transcontinental range.
+              Airlines appreciated its flexibility for both domestic and
+              transatlantic routes. Despite its popularity, production ended in
+              2004 after 1,050 were built. Many 757s remain in service today,
+              especially with Delta and cargo carriers like FedEx. The 757 is
+              often praised by pilots for its handling and performance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Boeing 767.jpg" alt="Boeing 767" />
+            <h4>Boeing 767</h4>
+          </div>
+          <div class="flip-card-back">
+            <p>
+              The Boeing 767 is a wide-body, twin-engine jet that entered
+              service in 1982. It was developed alongside the 757 and often
+              shares cockpit and systems similarities with it. The 767 was
+              Boeing’s first twin-engine jet approved for long overwater flights
+              under ETOPS regulations. It typically seats between 181 and 375
+              passengers, depending on the model and configuration. The aircraft
+              is used for both passenger and cargo transport, with the 767F
+              freighter still in production. Airlines have used the 767 for
+              long-haul flights due to its reliability and range. Over 1,200
+              units have been built. Today, it remains widely used by cargo
+              carriers and some passenger airlines.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Boeing-777.jpeg" alt="Boeing 777" />
+            <h4>Boeing 777</h4>
+          </div>
+          <div class="flip-card-back">
+            <p>
+              The Boeing 777 is a large, twin-engine, long-range wide-body jet
+              introduced in 1995. It was the first commercial aircraft to be
+              fully designed using computer-aided design (CAD). The 777 is known
+              for its spacious cabin, long range, and high fuel efficiency. It
+              typically seats between 314 and 396 passengers, making it ideal
+              for international travel. Multiple variants exist, including the
+              extended-range 777-200ER and the 777-300ER. The aircraft is
+              favored by major international airlines for transcontinental and
+              transoceanic routes. Over 1,700 units have been delivered, with
+              the next-generation 777X currently in development. It remains one
+              of Boeing’s most successful wide-body jets.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Boeing 787.jpg" alt="Boeing 787" />
+            <h4>Boeing 787</h4>
+          </div>
+          <div class="flip-card-back">
+            <p>
+              The Boeing 787 Dreamliner is a modern, long-range, wide-body
+              aircraft that first flew in 2009 and entered service in 2011. It
+              is made primarily from composite materials, making it lighter and
+              more fuel-efficient than older jets. The 787 features improved air
+              quality, larger windows, and quieter engines for a better
+              passenger experience. It comes in three versions: 787-8, 787-9,
+              and 787-10, seating between 242 and 330 passengers. The aircraft
+              is capable of flying ultra-long-haul routes while using less fuel.
+              Its efficiency has opened up more direct international routes for
+              airlines. The Dreamliner has become a favorite for both passengers
+              and operators alike. Boeing continues to produce and upgrade the
+              787 family.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="container-fluid">
+      <div class="row">
+       
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <img src="Boeing-707.jpeg" class="card-img-top" alt="Boeing 707" />
+            <div class="card-body">
+              <h4 class="card-title">Boeing 707</h4>
+              <p class="card-text">
+                A pioneering jetliner introduced in the 1950s. Developed from
+                the Boeing 367-80 prototype, the initial 707-120 first flew on
+                December 20, 1957. Pan Am began regular 707 service on October
+                26, 1958.
+              </p>
             </div>
           </div>
-          <div class="col">
+        </div>
+
+        
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <img src="Boeing 717.jpg" class="card-img-top" alt="Boeing 717" />
+            <div class="card-body">
+              <h4 class="card-title">Boeing 717</h4>
+              <p class="card-text">
+                First built in 1998. Operated from 1998 to 2006. Primarily used
+                for short-haul routes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <img src="Boeing-727.jpg" class="card-img-top" alt="Boeing 727" />
+            <div class="card-body">
+              <h4 class="card-title">Boeing 707</h4>
+              <p class="card-text">
+                A pioneering jetliner introduced in the 1950s. Developed from
+                the Boeing 367-80 prototype, the initial 707-120 first flew on
+                December 20, 1957. Pan Am began regular 707 service on October
+                26, 1958.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <img src="Boeing-747.jpeg" class="card-img-top" alt="Boeing 747" />
+            <div class="card-body">
+              <h4 class="card-title">Boeing 707</h4>
+              <p class="card-text">
+                A pioneering jetliner introduced in the 1950s. Developed from
+                the Boeing 367-80 prototype, the initial 707-120 first flew on
+                December 20, 1957. Pan Am began regular 707 service on October
+                26, 1958.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div> -->
+
+    <!-- 
+    <div class="row">
+      <div class="container-fluid">
+        <div class="col-1"></div>
+        <div class="col-6">
+          <div class="card">
+            <img src="Boeing-707.jpeg" class="card-img-top" alt="Boeing 707" />
+            <div class="card-body">
+              <h4 class="card-title">Aviation Geek</h4>
+
+              <p class="card-text">
+                  
+                </p>
+            </div>
+          </div>
+          <figure>
+            <img src="Boeing 717.jpg" class="img-thumbnail" alt="717" />
+            <figcaption>
+              Boeing 717. First build in 1998. It has been operating from 1998 -
+              2006. It was mainly a
+            </figcaption>
+          </figure>
+
+          <a href="https://www.flightradar24.com/" target="_blank" class="btn btn-primary">Flight Radar 24</a>
+                <a href="https://www.liveatc.net/" target="_blank" class="btn btn-primary">Live ATC radio</a>
+        </div>
+      </div>
+    </div> -->
+    <!-- <div class="col">
             <div class="card">
               <img src="Volleyball.jpeg" class="card-img-top" alt="Volleyball background" />
               <div class="card-body">
@@ -66,19 +391,19 @@
                   website</a>
               </div>
             </div>
-          </div>
-    <figure>
-        <img src="Boeing 717.jpg" class="img-thumbnail" alt="717">
-        <figcaption>Boeing 717. First build in 1998 - 2006 </figcaption>
-    </figure>
-    <img src="Boeing 717.jpg" class="img-thumbnail" alt="717">
-    <img src="boeing-727.jpg" class="img-thumbnail" alt="727">
-    <img src="B737.jpeg" class="img-thumbnail" alt="737">
-    <img src="boeing-747.jpeg" class="img-thumbnail" alt="747">
-    <div class="text-center">
+          </div> -->
+
+    <!-- <img src="Boeing 717.jpg" class="img-thumbnail" alt="717"> -->
+    <!-- <img src="boeing-727.jpg" class="img-thumbnail" alt="727" />
+    <img src="B737.jpeg" class="img-thumbnail" alt="737" />
+    <img src="boeing-747.jpeg" class="img-thumbnail" alt="747" /> -->
+    <!-- <div class="text-center">
         <img src="Boeing-707.jpeg" class="img-thumbnail" alt="707">
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-</body>
+    </div> -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

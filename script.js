@@ -55,7 +55,7 @@ async function getAllRecords() {
             <p>Departure Airport: ${departure} </p>
             <p>Arrival Airport: ${arrival}</p>
             <p> Arrival Time: ${time} </p>
-            <p> Flight Days: ${days} </p>
+            <p> Frequency: ${days} </p>
             
              <div class="mt-auto d-flex justify-content-between">
             
