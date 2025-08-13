@@ -21,6 +21,7 @@
   justify-content: center;
   gap: 5%;
   flex-wrap: wrap;
+  margin: 4px;
 }
 
 .flip-card {
@@ -28,6 +29,7 @@
   height: 55vw;  /* Responsive height based on viewport width */
   max-height: 500px; /* Optional cap on height */
   perspective: 1000px;
+
 }
 
 .flip-card-inner {
