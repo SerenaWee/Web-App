@@ -8,6 +8,7 @@
   flex-wrap: wrap; /* Allow wrapping to next line */
   gap: 10px; /* Space between items, optional */
 }
+
 /* Flip card container
 .flip-card {
   background-color: transparent;

@@ -50,15 +50,16 @@ async function getAllRecords() {
             }
             <div class="card-body d-flex flex-column">
             <h5 class="card-title">${name}</h5>
+            <p> Aircraft type: ${type} </p>
             <p> Flight Number: ${flight} </p>
             <p>Departure Airport: ${departure} </p>
-            <h7>Arrival Airport: ${arrival}</h7>
+            <p>Arrival Airport: ${arrival}</p>
             <p> Arrival Time: ${time} </p>
             <p> Flight Days: ${days} </p>
-            <p> Aircraft type: ${type} </p>
+            
              <div class="mt-auto d-flex justify-content-between">
             
-           <a class="btn btn-primary w-auto col-3" href="./schedule.html?id=${record.id}""> Back to Alleys List </a>
+           <a class="btn btn-primary w-auto col-3" href="./schedule.html?id=${record.id}""> View Detail </a>
           </div>
           </div>
         </div>
@@ -86,17 +87,21 @@ async function getOneRecord (id) {
     `https://api.airtable.com/v0/app0agWsi4kCVfxTA/SFO%20Flights/${id}`,
     options
   );
+
+
   const data = await response.json();
+
+  console.log(data)
   const fields = data.fields;
-let record = data.records
-        let make = data.records.fields["Photo"];
-        let name = data.records.fields["Name"]; //here we are using the Field ID to fecth the name property
-        let flight = data.records.fields["Flight"];
-        let departure = data.records.fields["Departure"];
-        let arrival = data.records.fields["Arrival"]; 
-        let time = data.records.fields["Time"];
-        let days = data.records.fields["Days"];
-        let type = data.records.fields["Type"];
+  let record = data.records
+        let make = data.fields["Photo"];
+        let name = data.fields["Name"]; //here we are using the Field ID to fecth the name property
+        let flight = data.fields["Flight"];
+        let departure = data.fields["Departure"];
+        let arrival = data.fields["Arrival"]; 
+        let time = data.fields["Time"];
+        let days = data.fields["Days"];
+        let type = data.fields["Type"];
   getResultElement.innerHTML = `
     <div class="card detail-card">
       <div class="card-body">
@@ -106,7 +111,7 @@ let record = data.records
                 ? `<img class="card-img-top rounded" alt="${name}" src="${make[0].url}">`
                 : ``
             }
-        <h5 class="card-title">${name}</h5>
+        
             <p> Flight Number: ${flight} </p>
             <p>Departure Airport: ${departure} </p>
             <h7>Arrival Airport: ${arrival}</h7>
@@ -118,7 +123,7 @@ let record = data.records
             ? `<a href="${fields["Website"]}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mt-3 me-2">Visit Website</a>`
             : ""
         }
-        <a href="schedule.html" class="btn btn-secondary mt-3">Back to List</a>
+        <a href="schedule.html" class="btn btn-success mt-3">Back to Schedule</a>
       </div>
     </div>
   `;
