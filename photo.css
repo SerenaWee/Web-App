@@ -21,7 +21,7 @@
   justify-content: center;
   gap: 5%;
   flex-wrap: wrap;
-  margin: 4px;
+gap: 8px;
 }
 
 .flip-card {
