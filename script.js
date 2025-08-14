@@ -29,11 +29,11 @@ async function getAllRecords() {
         let make = data.records[i].fields["Photo"];
         let name = data.records[i].fields["Name"]; //here we are using the Field ID to fecth the name property
         let flight = data.records[i].fields["Flight"];
-        let departure = data.records[i].fields["Departure"];
-        let arrival = data.records[i].fields["Arrival"]; 
-        let time = data.records[i].fields["Time"];
-        let days = data.records[i].fields["Days"];
-        let type = data.records[i].fields["Type"];
+        // let departure = data.records[i].fields["Departure"];
+        // let arrival = data.records[i].fields["Arrival"]; 
+        // let time = data.records[i].fields["Time"];
+        // let days = data.records[i].fields["Days"];
+        // let type = data.records[i].fields["Type"];
         
 // let anchorId = name.replace(/\s+/g, "-").toLowerCase();
 
@@ -50,12 +50,9 @@ async function getAllRecords() {
             }
             <div class="card-body d-flex flex-column">
             <h5 class="card-title">${name}</h5>
-            <p> Aircraft type: ${type} </p>
+           
             <p> Flight Number: ${flight} </p>
-            <p>Departure Airport: ${departure} </p>
-            <p>Arrival Airport: ${arrival}</p>
-            <p> Arrival Time: ${time} </p>
-            <p> Frequency: ${days} </p>
+           
             
              <div class="mt-auto d-flex justify-content-between">
             
@@ -138,7 +135,11 @@ if (idParams.length >= 2) {getOneRecord(idParams[1]);
   getAllRecords();
 }
 
-
+//  <p>Departure Airport: ${departure} </p>
+//             <p>Arrival Airport: ${arrival}</p>
+//             <p> Arrival Time: ${time} </p>
+//             <p> Frequency: ${days} </p>
+//  <p> Aircraft type: ${type} </p>
 
 
 
