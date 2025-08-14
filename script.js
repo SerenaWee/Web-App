@@ -13,7 +13,7 @@ async function getAllRecords() {
 
 
   await fetch(
-    "https://api.airtable.com/v0/app0agWsi4kCVfxTA/SFO%20Flights",
+    `https://api.airtable.com/v0/app0agWsi4kCVfxTA/SFO%20Flights?&view=depart`,
     options
   )
     .then((response) => response.json())
