@@ -1,9 +1,21 @@
+.nav .nav-item .nav-link.active {
+    background-color: lightpink;
+    color: darkblue;
+}
+body {
+     background-image: url("air.jpeg");
+     
+}
+
 iframe {
-    width:100%;
-    height:150%;
-     margin: 0; 
-     /* border:1px solid ; */
+    width:80%;
+    height:600px;
+     /* margin: 0; 
+     border:1px solid ;
      position: 0;
+     background: transparent; 
+     border: 1px solid #ccc;
+     background-image: url("IMG_8880.JPG"); */
 }
 .btn {
     border-radius: 8px;
