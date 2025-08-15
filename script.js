@@ -111,7 +111,7 @@ async function getOneRecord (id) {
         
             <p> Flight Number: ${flight} </p>
             <p>Departure Airport: ${departure} </p>
-            <h7>Arrival Airport: ${arrival}</h7>
+            <p>Arrival Airport: ${arrival}</p>
             <p> Arrival Time: ${time} </p>
             <p> Flight Days: ${days} </p>
             <p> Aircraft type: ${type} </p>
