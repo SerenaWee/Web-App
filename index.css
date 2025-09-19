@@ -4,17 +4,17 @@
     color: blue ;
 }
 
-.nav-link {
+/* .nav-link {
   color:white ;
   background-color: darkblue;
   font-style:bold;
-}
+} */
 
 
 body { 
   /* background:url("/Aviation.jpg");
   background-image: url("images/beer\ on\ beach\ \(1\).jpeg"); */
-  background-image: url("plane\ 4.png");
+  background-image: url("planes\ sf.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   /*   height: 100vh; */
