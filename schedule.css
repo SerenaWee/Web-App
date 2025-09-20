@@ -10,7 +10,8 @@
 }
 
 body {
-  background-color: MistyRose;
+  background-color: #F0F8FF;
+  padding: 20px;
 }
 /* Flip card container
 .flip-card {
